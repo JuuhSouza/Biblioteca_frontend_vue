@@ -1,15 +1,15 @@
 :root {
-    --bg: #0F1815;
-    --surface: #17231F;
-    --ink: #E6EDE9;
-    --muted: #9DADA6;
+    --bg-page: #0F1815;
+    --input-pesquisa: #17231F;
+    --color-geral: #E6EDE9;
+    --color-link-header: #9DADA6;
     --line: #2B3B35;
-    --pine: #3A5C52;
-    --accent: #8DB0EE;
-    --on: #0B1410;
-    --ok: #4CB57C;
-    --no: #A33A2B;
-    --serif: 'Newsreader', Georgia, serif;
+    --line-navegacao: #3A5C52;
+    --link-ativo: #8DB0EE;
+    --ativado-livro: #eaf0ed;
+    --disponivel: #4CB57C;
+    --indisponivel: #A33A2B;
+    --font-geral: 'Newsreader', Georgia, serif;
     --sans: 'Instrument Sans', system-ui, sans-serif;
     box-sizing: border-box;
 }
@@ -27,8 +27,46 @@ html {
 }
 
 body {
+    padding: 2rem;
     margin: 0;
-    background: var(--bg);
-    color: var(--ink);
+    background: var(--bg-page);
+    color: var(--color-geral);
     font: 400 15px/1.5 var(--sans);
+}
+
+/* Cole no src/style.css (CSS global do projeto) */
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid var(--link-ativo);
+    outline-offset: 2px;
+}
+
+h1,
+h2 {
+    font-family: var(--font-geral);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.15;
+}
+
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='text'],
+select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--input-pesquisa);
 }
