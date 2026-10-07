@@ -69,6 +69,13 @@ defineEmits(['limpar'])
 .chk input {
   width: 18px;
   height: 18px;
-  accent-color: var(--accent);
+}
+
+.btn{
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--input-pesquisa);
 }
 </style>

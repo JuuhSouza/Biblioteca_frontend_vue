@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-// Recebe a lista de assuntos (de cima para baixo)
 defineProps({
   assuntos: { type: Array, required: true },
 })

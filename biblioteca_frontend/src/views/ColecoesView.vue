@@ -1,28 +1,3 @@
-<script setup>
-import { ref, computed, onMounted } from 'vue'
-import { api } from '../services/api'
-import { useSessao } from '../composables/useSessao'
-import CardLivro from '../components/CardLivro.vue'
-import DetalheLivro from '../components/DetalheLivro.vue'
-
-const { usuario, colecao } = useSessao()
-
-const livros = ref([])
-const carregando = ref(true)
-const livroSelecionado = ref(null)
-
-onMounted(async () => {
-  try {
-    livros.value = await api.listarLivros()
-  } finally {
-    carregando.value = false
-  }
-})
-
-// Só os livros cujo id está salvo na coleção
-const meus = computed(() => livros.value.filter((l) => colecao.value.includes(l.id)))
-</script>
-
 <template>
   <section>
     <h1>Minhas coleções</h1>
@@ -48,6 +23,27 @@ const meus = computed(() => livros.value.filter((l) => colecao.value.includes(l.
     />
   </section>
 </template>
+
+<script setup>
+import { ref, computed, onMounted } from 'vue'
+import { useSessao } from '../composables/useSessao'
+
+const { usuario, colecao } = useSessao()
+
+const livros = ref([])
+const carregando = ref(true)
+const livroSelecionado = ref(null)
+
+onMounted(async () => {
+  try {
+    livros.value = await api.listarLivros()
+  } finally {
+    carregando.value = false
+  }
+})
+
+const meus = computed(() => livros.value.filter((l) => colecao.value.includes(l.id)))
+</script>
 
 <style scoped>
 .livros {

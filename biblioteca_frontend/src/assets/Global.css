@@ -34,12 +34,11 @@ body {
     font: 400 15px/1.5 var(--sans);
 }
 
-/* Cole no src/style.css (CSS global do projeto) */
-
 button,
 input,
 select {
     font: inherit;
+    color: var(--color-geral);
 }
 
 button {

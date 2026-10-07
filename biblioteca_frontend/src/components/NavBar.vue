@@ -50,16 +50,14 @@ function aoSair() {
 </template>
 
 <style scoped>
-/* Faixa que ocupa a largura toda (fundo e borda) */
 .topo-site {
   position: sticky;
-  top: 0; /* sem isso o "sticky" não gruda */
+  top: 0;
   z-index: 5;
   background: var(--bg-page);
   border-bottom: 1px solid var(--line);
 }
 
-/* Conteúdo centralizado, alinhado com o <main> da página */
 .topo-inner {
   display: flex;
   flex-wrap: wrap;
@@ -94,16 +92,22 @@ nav {
   text-decoration: none;
 }
 
-/* O RouterLink põe aria-current="page" no link da página atual */
 .tab[aria-current='page'] {
   color: var(--color-geral);
   border-color: var(--link-ativo);
 }
 
-.conta {
-  margin-left: auto; /* empurra para a direita */
+.conta{
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 12px 18px;
+  background: #86a9f2;
+  color: red;
+  border: 0;
+  border-radius: 8px;
+  font: 600 0.95rem var(--sans);
+  cursor: pointer;
 }
 </style>
