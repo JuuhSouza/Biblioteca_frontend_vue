@@ -1,0 +1,34 @@
+:root {
+    --bg: #0F1815;
+    --surface: #17231F;
+    --ink: #E6EDE9;
+    --muted: #9DADA6;
+    --line: #2B3B35;
+    --pine: #3A5C52;
+    --accent: #8DB0EE;
+    --on: #0B1410;
+    --ok: #4CB57C;
+    --no: #A33A2B;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Instrument Sans', system-ui, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+* {
+    box-sizing: border-box
+}
+
+[hidden] {
+    display: none !important
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 15px/1.5 var(--sans);
+}
